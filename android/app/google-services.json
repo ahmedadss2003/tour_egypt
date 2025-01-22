@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "10488922716",
+    "firebase_url": "https://mygp-6522c-default-rtdb.firebaseio.com",
+    "project_id": "mygp-6522c",
+    "storage_bucket": "mygp-6522c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10488922716:android:ce03c9b43114451d145c99",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9u-gFWlMFaS81kU0o7utdFfp0fO6wWSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
