@@ -9,6 +9,7 @@ class PlacesCubit extends Cubit<PlacesState> {
   PlacesCubit() : super(PlacesInitial());
 
 
+
  Future<void> fetchPlaces() async {
     try {
       emit(PlacesLoading()); // Show loading state
