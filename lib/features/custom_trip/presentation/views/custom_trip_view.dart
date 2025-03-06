@@ -3,10 +3,11 @@ import 'package:login/features/custom_trip/presentation/views/widgets/custom_tri
 
 class CustomTripView extends StatelessWidget {
   const CustomTripView({super.key});
-
+  static const routeName = "CustomTripView";
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      
       body:  CustomTripViewBody(),
     );
   }

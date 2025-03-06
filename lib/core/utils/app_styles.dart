@@ -22,6 +22,10 @@ class AppStyles {
     fontSize: 18 ,
     color: Color.fromARGB(255, 255, 0, 0),
     // fontFamily: "ZillaSlab" ,
+  );static const textStyle18white = TextStyle(
+    fontSize: 18 ,
+    color: Colors.white,
+    // fontFamily: "ZillaSlab" ,
   );
     static const textStyle18Black = TextStyle(
     fontSize: 18 ,

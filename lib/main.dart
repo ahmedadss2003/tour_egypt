@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:login/core/helper_function/helper_function.dart';
 import 'package:login/core/utils/app_colors.dart';
 import 'package:login/features/splash/presentation/views/splash_view.dart';
 
@@ -18,8 +19,8 @@ class TourEgyptApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.kPrimaryColor,
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashView(),
-      
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: SplashView.routeName,
     );
   }
 }
