@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/core/models/place_data_model.dart';
-import 'package:login/features/home/presentation/views/widgets/custom_cities_image.dart';
+import 'package:login/features/home/presentation/views/widgets/custom_cities_card.dart';
 
 class CustomSliverListView extends StatelessWidget {
   const CustomSliverListView({super.key, required this.places});

@@ -15,8 +15,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const HomeView());
     case CustomTripView.routeName:
       return MaterialPageRoute(builder: (_) => const CustomTripView());
-    case GeneratedTrip.routeName:
-      return MaterialPageRoute(builder: (_) => const GeneratedTrip());
+
     default:
       return MaterialPageRoute(builder: (_) => const Scaffold());
   }

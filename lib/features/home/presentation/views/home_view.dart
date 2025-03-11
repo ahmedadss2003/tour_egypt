@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:login/features/detailes_view/presentation/view/widgets/search_bar.dart';
-
 import 'package:login/features/custom_trip/presentation/views/custom_trip_view.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_bottom_navbar.dart';
 import 'package:login/features/home/presentation/views/widgets/home_content.dart';

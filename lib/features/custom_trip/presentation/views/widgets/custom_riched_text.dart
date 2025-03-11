@@ -10,7 +10,7 @@ class CustomRichedText extends StatelessWidget {
       children: [
          TextSpan(
         text: '$tittle: ',
-        style: AppStyles.textStyle18white,
+        style: AppStyles.textStyle22,
       ),
        TextSpan(
       text: subtitle,

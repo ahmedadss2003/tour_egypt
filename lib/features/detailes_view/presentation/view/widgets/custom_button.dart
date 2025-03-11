@@ -10,7 +10,7 @@ class CustomDirectionsButton extends StatelessWidget {
   final String locationUrl ; 
 
   Future<void> _launchGoogleMaps() async {
-    final Uri uri = Uri.parse(locationUrl); // Parse the URL
+    final Uri uri = Uri.parse(locationUrl); 
     if (await canLaunchUrl(uri)) {
       await launchUrl(
         uri,

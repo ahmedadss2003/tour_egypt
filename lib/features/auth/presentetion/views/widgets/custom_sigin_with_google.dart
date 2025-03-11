@@ -1,7 +1,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:login/features/home/data/services/api_services.dart';
+import 'package:login/core/services/api_services.dart';
 import 'package:login/features/interests_view/presentation/views/interests_view.dart';
 
 class CustomLoginWithGoogleAndFacebook extends StatelessWidget {

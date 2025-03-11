@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  const CustomTextFormField({super.key, required this.txt, this.suffixIcon, this.keyboardType, this.onSaved,  this.isPassword = false});
+  const CustomTextFormField({super.key, required this.txt, this.suffixIcon, this.keyboardType, this.onSaved,  this.isPassword = false, this.controller});
   final String txt ;
   final IconData? suffixIcon ;
   final TextInputType? keyboardType ;
   final void Function(String?)? onSaved ;
   final bool isPassword;
+  final TextEditingController? controller ;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -16,6 +17,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
       obscureText: widget.isPassword ? isObscure : false,
       onSaved: widget.onSaved,
       
@@ -23,8 +25,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         if (value == null || value.isEmpty) {
           return 'هذا الحقل مطلوب';
         }
+        
         return null;
       },
+      controller: widget.controller,
       keyboardType: widget.keyboardType,
       decoration:  InputDecoration(
         

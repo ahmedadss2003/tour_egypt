@@ -1,5 +1,5 @@
-class InterestsModel {
+class InterestsPlacesModel {
   String imageAsset;
   String title;
-  InterestsModel(this.title, this.imageAsset);
+  InterestsPlacesModel(this.title, this.imageAsset);
 }

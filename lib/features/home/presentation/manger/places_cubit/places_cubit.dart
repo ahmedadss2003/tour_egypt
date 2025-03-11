@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:login/core/models/place_data_model.dart';
-import 'package:login/features/home/data/services/api_services.dart';
+import 'package:login/core/services/api_services.dart';
 import 'package:meta/meta.dart';
 
 part 'places_state.dart';
@@ -12,11 +12,20 @@ class PlacesCubit extends Cubit<PlacesState> {
 
  Future<void> fetchPlaces() async {
     try {
-      emit(PlacesLoading()); // Show loading state
-      final places = await ApiServices().fetchPlaces(); // Fetch data
-      emit(PlacesLoaded(places)); // Update state with the data
+      emit(PlacesLoading()); 
+      final places = await ApiServices().fetchPlaces();
+      emit(PlacesLoaded(places)); 
     } catch (e) {
-      emit(PlacesError(e.toString())); // Handle errors
+      emit(PlacesError(e.toString()));
     }
   }
-}
+  Future<void>FetchInterestsPlaces(List<String> interests) async {
+    try {
+      emit(PlacesLoading()); 
+      final places = await ApiServices().fetchPlacesByInterests(interests);
+      emit(PlacesLoaded(places)); 
+    } catch (e) {
+      emit(PlacesError(e.toString()));
+    }
+  }
+} 

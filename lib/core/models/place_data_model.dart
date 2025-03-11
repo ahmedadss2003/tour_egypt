@@ -10,7 +10,19 @@ class PlaceModel {
   final String description;
   final double lat;
   final double long;
-
+/*
+  final String entranceFees;
+  final double lat;
+  final double long;
+  final String description;
+  final String entryFeesForForeigners;
+  final String governmentName;
+  final String imageUrl;
+  final String location;
+  final String name;
+  final String typeOfTourism;
+  final String workHours;
+*/
   PlaceModel({
     required this.name,
     required this.governmentName,
