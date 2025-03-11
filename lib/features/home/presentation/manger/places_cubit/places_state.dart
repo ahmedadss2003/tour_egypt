@@ -9,6 +9,7 @@ class PlacesLoaded extends PlacesState {
   final List<PlaceModel> places;
 
   PlacesLoaded(this.places);
+  
 }
 class PlacesError extends PlacesState {
   final String message;

@@ -19,11 +19,17 @@ class PlacesCubit extends Cubit<PlacesState> {
       emit(PlacesError(e.toString()));
     }
   }
-  Future<void>FetchInterestsPlaces(List<String> interests) async {
+  Future<void> fetchPlacesByInterests(List<String> interests) async {
+    emit(PlacesLoading());
     try {
-      emit(PlacesLoading()); 
-      final places = await ApiServices().fetchPlacesByInterests(interests);
-      emit(PlacesLoaded(places)); 
+      if (interests.isEmpty) {
+        // If no interests selected, fetch all places
+        final places = await ApiServices().fetchPlaces();
+        emit(PlacesLoaded(places));
+      } else {
+        final places = await ApiServices().fetchPlacesByInterests(interests);
+        emit(PlacesLoaded(places));
+      }
     } catch (e) {
       emit(PlacesError(e.toString()));
     }

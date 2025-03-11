@@ -25,7 +25,7 @@ class ApiServices {
       final response = await dio.get(firebaseUrl);
 
       if (response.statusCode == 200) {
-        List<Map<String , dynamic>> data = response.data;
+        List<dynamic> data = response.data;
         List<PlaceModel> allPlaces = data
             .map((placeJson) {
               return PlaceModel.fromJson(Map<String, dynamic>.from(placeJson));
@@ -36,7 +36,7 @@ class ApiServices {
         List<PlaceModel> filteredPlaces = allPlaces
             .where((place) => interests.contains(place.typeOfTourism))
             .toList();
-        
+        print(filteredPlaces);
         return filteredPlaces;
       } else {
         throw Exception("Failed to load places");
