@@ -6,6 +6,7 @@ import 'package:login/features/home/data/mock_data/cities_data.dart';
 import 'package:login/features/home/presentation/manger/places_cubit/places_cubit.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_animated_text.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_carousel_slider.dart';
+import 'package:login/features/home/presentation/views/widgets/custom_container_menue_item.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_sliver_list_view.dart';
 
 class HomeContent extends StatefulWidget {
@@ -31,7 +32,9 @@ class _HomeContentState extends State<HomeContent> {
     return Scaffold(
       appBar: AppBar(
         title: const SearchBarr(),
-        
+        actions:const [
+           CustomContainerMenueItem(),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0),
