@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:login/core/services/api_services.dart';
 import 'package:login/features/interests_view/presentation/views/interests_view.dart';
 
-class CustomLoginWithGoogleAndFacebook extends StatelessWidget {
-  const CustomLoginWithGoogleAndFacebook({super.key, required this.icon});
+class SocialAuth extends StatelessWidget {
+  const SocialAuth({super.key, required this.icon});
   final IconData icon ;
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,7 @@ class CustomTextFormFieldWidget extends StatefulWidget {
     required this.icon,
     this.controller,
     this.suufixIcon,
-    this.isPassword = false, // Add this parameter
+    this.isPassword = false, this.keyboardType, this.onSaved, 
   });
 
   final String labelText;
@@ -16,7 +16,9 @@ class CustomTextFormFieldWidget extends StatefulWidget {
   final IconData? suufixIcon;
   final TextEditingController? controller;
   final Function(String)? onChanged;
-  final bool isPassword; // Add this parameter
+  final bool isPassword; 
+  final TextInputType? keyboardType ;
+  final void Function(String?)? onSaved ;
 
   @override
   State<CustomTextFormFieldWidget> createState() =>
@@ -29,6 +31,8 @@ class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: widget.onSaved,
+      keyboardType: widget.keyboardType,
       controller: widget.controller,
       obscureText: widget.isPassword ? _obscureText : false, // Toggle obscureText
       validator: (value) {

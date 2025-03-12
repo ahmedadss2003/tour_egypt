@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login/core/widgets/custom_text_button.dart';
-import 'package:login/core/widgets/custom_text_form_field.dart';
+import 'package:login/core/widgets/custom_text_form_field_update.dart';
 import 'package:login/features/custom_trip/presentation/views/widgets/generated_trip.dart';
 
 class CustomTripViewBody extends StatefulWidget {

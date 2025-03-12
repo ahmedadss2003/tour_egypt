@@ -51,14 +51,15 @@ class CustomInfoContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(10), 
             ),
             children: [
-              Text(
+              InteractiveViewer(
+                child: Text(
                 place.description,
                 style: const TextStyle(
                   fontSize: 18,
                   color: Colors.white,
                 ),
               
-              ),
+              ),),
               const SizedBox(height: 10), // Spacing between text and additional content
               const Icon(
                 Icons.description,

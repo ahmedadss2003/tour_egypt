@@ -51,19 +51,26 @@
                    ),
                     const SizedBox(height: 40,),
                   CustomTextFormFieldWidget(
+                    onSaved: (value){
+                      emailController.text = value!;
+                    },
                     labelText: "Email",
                     icon: Icons.email,
                     controller: emailController,
                     ),
                   const SizedBox(height: 20,),
                   CustomTextFormFieldWidget(
+                    onSaved: (value){
+                      passController.text = value! ;
+                    },
                     labelText: "Password",
                     icon:Icons.lock,
                     controller: passController,
                     isPassword:true 
                     ),
                   const SizedBox(height: 20,),
-                  const CustomTextFormFieldWidget(labelText: "Confirm Pasword",icon:Icons.lock,isPassword:true ,),
+                  const CustomTextFormFieldWidget(
+                    labelText: "Confirm Pasword",icon:Icons.lock,isPassword:true ,),
                   const SizedBox(height: 20,),
                   CustomButton(
                     txt: "Register",

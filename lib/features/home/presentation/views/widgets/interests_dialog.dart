@@ -100,14 +100,14 @@ class _InterestsDialogState extends State<InterestsDialog> with SingleTickerProv
             ),
             const SizedBox(height: 10),
            ElevatedButton(
-              onPressed: () {
+              onPressed: () async{
                 // Get selected interests
                 final selected = _selectedInterests.entries
                     .where((entry) => entry.value)
                     .map((entry) => entry.key)
                     .toList();
 
-                context.read<PlacesCubit>().fetchPlacesByInterests(selected);
+                await context.read<PlacesCubit>().fetchPlacesByInterests(selected);
                 Navigator.pop(context);
               },
               child: const Text("Apply"),
@@ -118,3 +118,23 @@ class _InterestsDialogState extends State<InterestsDialog> with SingleTickerProv
     );
   }
 }
+
+/*
+           ElevatedButton(
+            onPressed: () async {
+              // Get selected interests
+              final selected = _selectedInterests.entries
+                  .where((entry) => entry.value)
+                  .map((entry) => entry.key)
+                  .toList();
+
+              // Trigger cubit to filter places by interests and location
+              await context.read<PlacesCubit>().fetchPlacesByInterestsAndLocation(
+                interests: selected,
+                maxDistanceKm: 50.0, 
+              );
+              Navigator.pop(context); 
+            },
+            child: const Text("Apply"),
+          ),
+*/

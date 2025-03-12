@@ -75,11 +75,11 @@ class _LoginPageBodyState extends State<LoginPageBody> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     CustomLoginWithGoogleAndFacebook(
+                     SocialAuth(
                       icon: FontAwesomeIcons.google,
                      ),
                      SizedBox(width: 40,),
-                     CustomLoginWithGoogleAndFacebook(
+                     SocialAuth(
 
                       icon: FontAwesomeIcons.facebook,
                       
