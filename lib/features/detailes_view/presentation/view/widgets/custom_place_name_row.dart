@@ -8,7 +8,7 @@ class CustomPlaceNameRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-         Text(place.name, style: TextStyle(color: Colors.black, fontSize: 25, fontFamily: "gilroy"),),
+        SizedBox(width: 250,child: Text(place.name, style: const TextStyle(overflow: TextOverflow.visible,color: Colors.black, fontSize: 25, fontFamily: "gilroy"),)),
         const Spacer(),
         IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_border_outlined)),
       ]

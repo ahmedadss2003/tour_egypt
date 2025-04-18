@@ -99,28 +99,7 @@ class _InterestsDialogState extends State<InterestsDialog> with SingleTickerProv
               ),
             ),
             const SizedBox(height: 10),
-           ElevatedButton(
-              onPressed: () async{
-                // Get selected interests
-                final selected = _selectedInterests.entries
-                    .where((entry) => entry.value)
-                    .map((entry) => entry.key)
-                    .toList();
-
-                await context.read<PlacesCubit>().fetchPlacesByInterests(selected);
-                Navigator.pop(context);
-              },
-              child: const Text("Apply"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/*
-           ElevatedButton(
+                      ElevatedButton(
             onPressed: () async {
               // Get selected interests
               final selected = _selectedInterests.entries
@@ -137,4 +116,25 @@ class _InterestsDialogState extends State<InterestsDialog> with SingleTickerProv
             },
             child: const Text("Apply"),
           ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
+ElevatedButton(
+              onPressed: () async{
+                // Get selected interests
+                final selected = _selectedInterests.entries
+                    .where((entry) => entry.value)
+                    .map((entry) => entry.key)
+                    .toList();
+
+                await context.read<PlacesCubit>().fetchPlacesByInterests(selected);
+                Navigator.pop(context);
+              },
+              child: const Text("Apply"),
+            ),
 */

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:login/features/home/presentation/views/widgets/interests_dialog.dart';
 
-class CustomContainerMenueItem extends StatelessWidget {
+class FilterIcon extends StatelessWidget {
     void _showInterestsDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -12,7 +12,7 @@ class CustomContainerMenueItem extends StatelessWidget {
     );
   }
 
-  const CustomContainerMenueItem({
+  const FilterIcon({
     super.key,
   });
 
@@ -27,10 +27,10 @@ class CustomContainerMenueItem extends StatelessWidget {
        height: 40,
        margin: const EdgeInsets.only(right:10.0),
        decoration: const BoxDecoration(
-         color: Color.fromARGB(221, 58, 58, 58),
+         color: Color.fromARGB(221, 179, 177, 177),
          borderRadius: BorderRadius.all(Radius.circular(10)), 
        ),
-       child: const Icon(Icons.menu)),
+       child: const Icon(Icons.arrow_forward)),
     );
   }
 }

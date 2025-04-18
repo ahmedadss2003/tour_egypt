@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login/core/services/auth_services.dart';
+import 'package:login/features/auth/data/repos/auth_repo_impl.dart';
+import 'package:login/features/auth/presentetion/cubit/auth_cubit.dart';
 import 'package:login/features/auth/presentetion/views/widgets/register_view_body.dart';
 
 class RegisterView extends StatelessWidget {
@@ -6,9 +10,12 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: RegisterViewBody(),
-    ) ;
+    return BlocProvider(
+        create: (context) => AuthCubit(authRepo: AuthRepoImpl(firebaseAuthServices: DatabaseAuthServices())),
+
+      child: const Scaffold(
+        body: RegisterViewBody(),
+      ),
+    );
   }
 }
-

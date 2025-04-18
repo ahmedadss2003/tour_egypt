@@ -8,16 +8,19 @@ class CustomSliverListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-          child: CustomCitiesCard(
-            place: places[index],
-          ),
-        ),
-        childCount: places.length, // Number of list items
+    return SizedBox(
+        height: 350,
+        child: ListView.builder(
+        scrollDirection: Axis.horizontal, // ✅ Keep scrolling horizontal
+        itemCount: places.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: CustomCitiesCard(place: places[index]),
+          );
+        },
       ),
-    );
+      );
+    
   }
 }

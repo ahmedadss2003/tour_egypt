@@ -16,9 +16,7 @@ class CustomAnimatedTextKit extends StatelessWidget {
           
           speed: const Duration(milliseconds: 100),
           textAlign: TextAlign.center,
-          textStyle: AppStyles.textStyle18Black.copyWith(
-            color: Colors.white
-          )
+          textStyle: AppStyles.textStyle18Black
           
           ),
       ],

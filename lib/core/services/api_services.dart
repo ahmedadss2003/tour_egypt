@@ -32,7 +32,6 @@ class ApiServices {
             })
             .toList();
 
-        // Filter places where "type of tourism" matches any of the selected interests
         List<PlaceModel> filteredPlaces = allPlaces
             .where((place) => interests.contains(place.typeOfTourism))
             .toList();

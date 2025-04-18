@@ -2,6 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:login/core/services/api_services.dart';
+import 'package:login/features/home/presentation/views/home_view.dart';
 import 'package:login/features/interests_view/presentation/views/interests_view.dart';
 
 class SocialAuth extends StatelessWidget {
@@ -13,7 +14,7 @@ class SocialAuth extends StatelessWidget {
       onTap: () {
         print(ApiServices().fetchPlaces());
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return  InterestsScreen();
+          return  const HomeView();
         }));
       },
       child: Container(

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login/features/comunity/presentation/screens/community_screen.dart';
 import 'package:login/features/custom_trip/presentation/views/custom_trip_view.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_bottom_navbar.dart';
 import 'package:login/features/home/presentation/views/widgets/home_content.dart';
@@ -15,12 +17,14 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    const HomeContent(),
-    const Center(child: Text("Likes Page")), // Placeholder
-    const CustomTripView(),
-    const Center(child: Text("Profile Page")), // Placeholder
-  ];
+final List<Widget> _pages = [
+  const HomeContent(),
+  const Center(child: Text("Likes Page")), // Placeholder
+  const CustomTripView(),
+  const CommunityScreen(),
+];
+
+
 
   void _onNavBarTap(int index) {
     setState(() {
