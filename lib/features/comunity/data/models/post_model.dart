@@ -16,4 +16,11 @@ class PostModel {
       'image_url': imageUrl,
     };
   }
+  factory PostModel.fromJson(Map<String, dynamic> json) {
+    return PostModel(
+      userId: json['user_id'],
+      text: json['text'],
+      imageUrl: json['image_url'],
+    );
+  }
 }

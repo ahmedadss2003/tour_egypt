@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class PostHeader extends StatelessWidget {
-  const PostHeader({super.key});
-
+  const PostHeader({super.key, required this.imageUrl});
+  final String imageUrl ;
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
+    return  ListTile(
       leading: CircleAvatar(
         backgroundImage: NetworkImage(
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlQCPrJP7yc9sWpppMDUoadLwYbGwvEpwj_Q&s', // Replace this with a direct avatar image URL
+          imageUrl ,
         ),
       ),
       title: Text(

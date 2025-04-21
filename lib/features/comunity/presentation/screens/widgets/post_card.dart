@@ -5,8 +5,9 @@ import 'package:login/features/comunity/presentation/screens/widgets/post_conten
 import 'package:login/features/comunity/presentation/screens/widgets/post_header.dart';
 import 'package:login/features/comunity/presentation/screens/widgets/post_image.dart';
 class PostCard extends StatelessWidget {
-  const PostCard({super.key});
-
+  const PostCard({super.key, required this.text, this.imageUrl});
+  final String text;
+  final String? imageUrl;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -17,9 +18,15 @@ class PostCard extends StatelessWidget {
         children:  [
           
 
-          const PostHeader(),
-          const PostContent(),
-          const PostImage(),
+          PostHeader(
+            imageUrl: imageUrl ?? "https://pubqxndstnzehanamrag.supabase.co/storage/v1/object/public/postimage/private/1745162255211790_1000570721.jpg",
+          ),
+          PostContent(
+          title: text,  
+          ),
+          PostImage(
+            imageUrl: imageUrl ?? "https://pubqxndstnzehanamrag.supabase.co/storage/v1/object/public/postimage/private/1745162255211790_1000570721.jpg",
+          ),
           const PostActions(),
         ],
       ),

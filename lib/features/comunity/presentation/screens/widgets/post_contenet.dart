@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 
 class PostContent extends StatelessWidget {
-  const PostContent({super.key});
-
+  const PostContent({super.key, required this.title});
+  final String title ;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Text(
-        'This place is amazing! The food is great and the staff is super friendly.',
+        title,
         style: TextStyle(fontSize: 16),
       ),
     );

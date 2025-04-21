@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login/constant.dart';
 import 'package:login/core/helper_function/helper_function.dart';
 import 'package:login/core/services/api_services.dart';
+import 'package:login/core/services/service_locator.dart';
 import 'package:login/features/home/presentation/manger/places_cubit/places_cubit.dart';
 import 'package:login/features/splash/presentation/views/splash_view.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -15,6 +16,7 @@ void main() async {
     url: subapaseUrl,
     anonKey: subapaseKey,
   );
+  setupServiceLocator();
   runApp(const TourEgyptApp());
 }
 
