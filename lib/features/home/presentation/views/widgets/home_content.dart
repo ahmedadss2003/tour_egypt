@@ -5,6 +5,7 @@ import 'package:login/core/utils/app_styles.dart';
 import 'package:login/features/chatboot/presentation/views/chat_boot_view.dart';
 import 'package:login/features/home/data/mock_data/cities_data.dart';
 import 'package:login/features/home/presentation/manger/places_cubit/places_cubit.dart';
+import 'package:login/features/home/presentation/views/widgets/all_places_view.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_container_menue_item.dart';
 import 'package:login/features/home/presentation/views/widgets/custom_sliver_list_view.dart';
 
@@ -46,9 +47,23 @@ const HomeContent({super.key});
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20,),
-          Text(
-            "Recomended For You",
-            style: AppStyles.textStyle22.copyWith(fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              Text(
+                "Recomended For You",
+                style: AppStyles.textStyle18.copyWith(fontWeight: FontWeight.bold,color: Colors.black),
+              ),
+              const Spacer(),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, AllPlacesView.routeName);
+                },
+                child: Text(
+                  "See all",
+                  style: AppStyles.textStyle18.copyWith(color: const Color(0xFFFD6B22)),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 20,),
           SizedBox(
@@ -121,7 +136,7 @@ Widget build(BuildContext context) {
       },
       child: Text(
       "Tell us what help you need. ",
-      style: AppStyles.textStyle18.copyWith(color: const Color.fromARGB(255, 32, 16, 123)),
+      style: AppStyles.textStyle18.copyWith(color: const Color.fromARGB(255, 17, 163, 95)),
     ),
       ),
     

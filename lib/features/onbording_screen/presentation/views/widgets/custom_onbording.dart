@@ -41,14 +41,14 @@ class CustomOnbordingpage extends StatelessWidget {
           const SizedBox(height: 70),
           Text(
             title,
-            style: AppStyles.textStyle22,
+            style: AppStyles.textStyle22.copyWith(color: Colors.white),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 14 ),
           Text(
             subTitle,
             textAlign: TextAlign.center,
-            style: AppStyles.textStyle14,
+            style: AppStyles.textStyle14.copyWith(color: Colors.white),
           ),
         ],
       ),

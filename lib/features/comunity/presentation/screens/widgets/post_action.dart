@@ -1,19 +1,29 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login/features/comunity/presentation/cubit/post_cubit.dart';
 
 class PostActions extends StatelessWidget {
-  const PostActions({super.key});
+  final int likesCount;
+  final int postId;
+
+  const PostActions({super.key, required this.likesCount, required this.postId});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-      child:  Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children:  [
-          IconWithText(icon: Icons.thumb_up_alt_outlined, count: 12),
-          IconWithText(icon: Icons.comment_outlined, count: 3),
-          IconWithText(icon: Icons.share_outlined, count: 5),
+        children: [
+          GestureDetector(
+            onTap: () {
+              // call function to toggle like here
+              context.read<PostCubit>().toggleLike(postId);
+            },
+            child: IconWithText(icon: Icons.thumb_up_alt_outlined, count: likesCount),
+          ),
+          const IconWithText(icon: Icons.comment_outlined, count: 3),
+          const IconWithText(icon: Icons.share_outlined, count: 5),
         ],
       ),
     );

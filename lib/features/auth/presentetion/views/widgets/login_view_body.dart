@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:login/core/utils/app_styles.dart';
 import 'package:login/features/auth/presentetion/cubit/auth_cubit.dart';
 import 'package:login/features/auth/presentetion/views/register_view.dart';
 import 'package:login/features/auth/presentetion/views/widgets/custom_button.dart';
 import 'package:login/features/auth/presentetion/views/widgets/custom_button_for_register.dart';
-import 'package:login/features/auth/presentetion/views/widgets/custom_sigin_with_google.dart';
+import 'package:login/features/auth/presentetion/views/widgets/social_auth.dart';
 import 'package:login/features/auth/presentetion/views/widgets/custom_text_form_field.dart';
+import 'package:login/features/auth/presentetion/views/widgets/remember_me_checkbox.dart';
 import 'package:login/features/home/presentation/views/home_view.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -51,21 +53,33 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           padding:const EdgeInsets.symmetric(horizontal: 20),
           child:  SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 const SizedBox(height: 100,),
-                SizedBox(
-                  height: 180,
-                  width: 180,
-                  child: ClipOval(child: Image.asset("assets/images/logo1.jpg" ,fit: BoxFit.cover, )),
-                ),
-                const SizedBox(height: 50,),
-                CustomTextFormFieldWidget(labelText: "Login",icon: Icons.email,controller:emailController , ),
+                const Text("Login",style: AppStyles.textStyle32,),
+                const SizedBox(height: 16,),
+                const Text("Welcome back, we missed you!",style: AppStyles.textStyle22,),
+                
+                const SizedBox(height: 20,),
+                CustomTextFormFieldWidget(labelText: "Enter Your Email Or Phone Number",icon: Icons.email,controller:emailController , ),
                 const SizedBox(height: 10,),
                 CustomTextFormFieldWidget(
-                  labelText: "Password",
+                  labelText: "Enter Password",
                   icon:Icons.lock,
                   controller: passController,
-                  isPassword: true, ),
+                  isPassword: true, 
+                ),
+                 Row(
+                  children: [
+                    GestureDetector(
+                      onTap: (){},
+                      child: const Text("Forget Password ?",style: const TextStyle(color:  Color(0xFFFD6B22)),),
+                    ),
+                    const Spacer(),
+                    const RememberMeCheckbox(),
+                  ],
+                ),
                 const SizedBox(height: 20,),
                 CustomButton(
                   txt: "Login",

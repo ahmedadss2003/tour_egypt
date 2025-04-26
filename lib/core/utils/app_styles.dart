@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppStyles {
   static const textStyle22 = TextStyle(
     fontSize: 22 ,
-    fontFamily: "ZillaSlab" ,
+    // fontFamily: "ZillaSlab" ,
   );
   static const textStyle32 = TextStyle(
     fontSize: 32 ,
@@ -30,6 +30,6 @@ class AppStyles {
     static const textStyle18Black = TextStyle(
     fontSize: 18 ,
     color: Colors.black,
-    fontFamily: "ZillaSlab" ,
+    // fontFamily: "ZillaSlab" ,
   );
 }

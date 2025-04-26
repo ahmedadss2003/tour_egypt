@@ -19,6 +19,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
     bool inAsyncCall=false;
     final TextEditingController emailController = TextEditingController() ;
     final TextEditingController passController = TextEditingController() ;
+    final TextEditingController nameController = TextEditingController() ;
 
 
     
@@ -54,12 +55,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 
                 children: [
                   const SizedBox(height: 100,),
-                   SizedBox(
-                  height: 180,
-                  width: 180,
-                  child: ClipOval(child: Image.asset("assets/images/logo1.jpg" ,fit: BoxFit.cover, )),
-                ),
-                  const SizedBox(height: 10,),
+                  
                    const Row(
                      children: [
                       Text(
@@ -70,7 +66,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                         ),
                      ],
                    ),
-                    const SizedBox(height: 40,),
+                    const SizedBox(height: 20,),
                     
                   const SizedBox(height: 20,),
                   CustomTextFormFieldWidget(
@@ -92,8 +88,10 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     isPassword:true 
                     ),
                   const SizedBox(height: 20,),
-                  const CustomTextFormFieldWidget(
-                    labelText: "Confirm Pasword",icon:Icons.lock,isPassword:true ,),
+                  CustomTextFormFieldWidget(
+                    labelText: "Name",
+                    controller: nameController,
+                  ),
                   const SizedBox(height: 20,),
                   CustomButton(
                     txt: "Register",
@@ -103,7 +101,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                       context.read<AuthCubit>().register(
                         email: emailController.text.trim(),
                         password: passController.text.trim(),
-                        name: "User Name", 
+                        name: nameController.text.trim(), 
                       );
                     }
                   },

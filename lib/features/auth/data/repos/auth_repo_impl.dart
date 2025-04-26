@@ -22,6 +22,7 @@ class AuthRepoImpl implements AuthRepo{
     final sb.AuthResponse res = await sb.Supabase.instance.client.auth.signUp(
       email: email,
       password: password,
+      
     );
 
     final sb.User? user = res.user;

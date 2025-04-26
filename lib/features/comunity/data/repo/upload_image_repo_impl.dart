@@ -16,9 +16,9 @@ class UploadImageRepoImpl extends UploadImageRepo{
   Future<Either<Failure , String>> uploadImage(File image)async {
     try {
   final fileName = "${DateTime.now().microsecondsSinceEpoch}_${image.path.split('/').last}";
-  final repsonse =await supabaseClient.storage.from(backetName).upload("private/$fileName" ,image);
+  final repsonse =await supabaseClient.storage.from(kPostBacketName).upload("private/$fileName" ,image);
   print("Upload response: $repsonse");
-  final publicUrl = supabaseClient.storage.from(backetName).getPublicUrl("private/$fileName");
+  final publicUrl = supabaseClient.storage.from(kPostBacketName).getPublicUrl("private/$fileName");
   print("Image uploaded to: $publicUrl");
   return Right(publicUrl);
 } catch (e) {
@@ -27,4 +27,7 @@ class UploadImageRepoImpl extends UploadImageRepo{
     
 
   }
+  
+  
+
 }

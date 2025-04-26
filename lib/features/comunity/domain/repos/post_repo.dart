@@ -8,5 +8,9 @@ abstract class PostRepo {
     required String text,
     File? imageFile,
   });
-  Future<Either<Failure , List<Map<String , dynamic>>>> getPosts();
+  Future<Either<Failure , List<Map<String , dynamic>>>> getAllPosts();
+  Future<Either<Failure , List<Map<String , dynamic>>>> getMyPosts();
+  Future<void> toggleLike(int postId) ;
+
+  
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PostHeader extends StatelessWidget {
-  const PostHeader({super.key, required this.imageUrl});
+  const PostHeader({super.key, required this.imageUrl, required this.name});
   final String imageUrl ;
+  final String name ;
   @override
   Widget build(BuildContext context) {
     return  ListTile(
@@ -11,12 +12,12 @@ class PostHeader extends StatelessWidget {
           imageUrl ,
         ),
       ),
-      title: Text(
-        'Ahmed Ashraf',
-        style: TextStyle(fontWeight: FontWeight.bold),
+      title:  Text(
+        name,
+        style: const TextStyle(fontWeight: FontWeight.bold),
       ),
-      subtitle: Text('12 hours ago'),
-      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      subtitle: const Text('12 hours ago'),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     );
   }
 }

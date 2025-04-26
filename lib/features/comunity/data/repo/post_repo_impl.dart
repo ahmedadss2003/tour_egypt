@@ -57,14 +57,60 @@ class PostRepoImpl extends PostRepo{
       return Left(ServerFailure(message: " Failure in add Post: ${e.toString()}"));    }
   }
   
-  @override
-    Future<Either<Failure, List<Map<String, dynamic>>>> getPosts() async{
-    try {
-    final response =await supabaseClient.from('Posts').select("*").order('created_at', ascending: false);
+ @override
+Future<Either<Failure, List<Map<String, dynamic>>>> getAllPosts() async {
+  try {
+    final response = await supabaseClient
+        .from('Posts')
+        .select('*, User(name) , postlikes(count)')
+        .order('created_at', ascending: false);
+
     return right(response);
   } catch (e) {
     return left(ServerFailure(message: e.toString()));
   }
-    
-    }
+}
+
+@override
+Future<Either<Failure, List<Map<String, dynamic>>>> getMyPosts() async {
+  try {
+    final userId = supabaseClient.auth.currentUser!.id;
+    final response = await supabaseClient
+        .from('Posts')
+        .select('*, User(name)') 
+        .eq('uid', userId)
+        .order('created_at', ascending: false);
+    return right(response);
+  } catch (e) {
+    return left(ServerFailure(message: e.toString()));
+  }
+}
+
+Future<void> toggleLike(int postId) async {
+  final userId = supabaseClient.auth.currentUser!.id;
+
+  final existingLike = await supabaseClient
+      .from('postlikes')
+      .select()
+      .eq('user_id', userId)
+      .eq('post_id', postId)
+      .maybeSingle();
+
+  if (existingLike != null) {
+    await supabaseClient
+        .from('postlikes')
+        .delete()
+        .eq('user_id', userId)
+        .eq('post_id', postId);
+  } else {
+    await supabaseClient.from('postlikes').insert({
+      'user_id': userId,
+      'post_id': postId,
+      'created_at': DateTime.now().toIso8601String(),
+    });
+  }
+}
+
+
+  
 }

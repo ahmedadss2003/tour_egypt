@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:login/core/services/api_services.dart';
 import 'package:login/features/home/presentation/views/home_view.dart';
-import 'package:login/features/interests_view/presentation/views/interests_view.dart';
 
 class SocialAuth extends StatelessWidget {
   const SocialAuth({super.key, required this.icon});
@@ -22,7 +21,7 @@ class SocialAuth extends StatelessWidget {
         height: 50,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.purple
+          color: Color.fromARGB(255, 198, 154, 154)
         ),
         child:  Icon(
               icon ,
@@ -36,16 +35,12 @@ class SocialAuth extends StatelessWidget {
 
 void fetchDataFromFirebase() async {
   try {
-    // Initialize Dio instance
     final dio = Dio();
 
-    // Your Firebase Realtime Database URL (replace `.json` if it's not included)
     const String firebaseUrl = 'https://mygp-6522c-default-rtdb.firebaseio.com/.json';
 
-    // Make GET request to fetch data
     Response response = await dio.get(firebaseUrl);
 
-    // Log the data in the terminal
     if (response.statusCode == 200) {
       print('Data fetched successfully:');
       print(response.data);
