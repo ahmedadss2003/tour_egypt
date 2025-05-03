@@ -5,10 +5,10 @@ class DoneButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const DoneButton({
-    Key? key,
+    super.key,
     required this.isEnabled,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

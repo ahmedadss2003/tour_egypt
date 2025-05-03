@@ -86,7 +86,8 @@ Future<Either<Failure, List<Map<String, dynamic>>>> getMyPosts() async {
   }
 }
 
-Future<void> toggleLike(int postId) async {
+@override
+  Future<void> toggleLike(int postId) async {
   final userId = supabaseClient.auth.currentUser!.id;
 
   final existingLike = await supabaseClient

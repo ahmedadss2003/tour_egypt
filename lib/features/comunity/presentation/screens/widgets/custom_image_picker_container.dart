@@ -25,7 +25,7 @@ class _CustomImagePicgerContainerState extends State<CustomImagePicgerContainer>
       imageFile = image;
     });
   } else {
-    return null;
+    return;
   }
 }
   @override

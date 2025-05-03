@@ -9,7 +9,7 @@ class CustomEntranceFees extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        Text("Entrance fees: ", style: AppStyles.textStyle18Black,),
+        const Text("Entrance fees: ", style: AppStyles.textStyle18Black,),
         Text(place.entranceFees, style: AppStyles.textStyle18,)
       ],
     );

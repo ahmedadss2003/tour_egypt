@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:login/features/home/presentation/views/home_view.dart';
 import 'package:login/features/onbording_screen/presentation/views/onboarding_view.dart';
 import 'package:login/features/splash/presentation/views/splash_view.dart';
+import 'package:login/features/analytics/presentation/views/analytics_screen.dart';
 
 class AppRouter {
   static const String splashRoute = '/';
@@ -20,10 +21,13 @@ class AppRouter {
         path: onboardingRoute,
         builder: (context, state) => const OnboardingView(),
       ),
-      
       GoRoute(
         path: homeRoute,
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: '/analytics',
+        builder: (context, state) => AnalyticsScreen(),
       ),
     ],
   );

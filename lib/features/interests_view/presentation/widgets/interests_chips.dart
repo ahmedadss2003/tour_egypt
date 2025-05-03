@@ -6,11 +6,11 @@ class InterestsChips extends StatelessWidget {
   final ValueChanged<String> onToggleSelection;
 
   const InterestsChips({
-    Key? key,
+    super.key,
     required this.interests,
     required this.selectedInterests,
     required this.onToggleSelection,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

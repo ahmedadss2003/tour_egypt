@@ -134,7 +134,7 @@ class CustomCitiesCardVertical extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          "${place.typeOfTourism}",
+                          place.typeOfTourism,
                           style: AppStyles.textStyle18.copyWith(
                             fontFamily: "ZillaSlab",
                             color: Colors.black,

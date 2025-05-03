@@ -74,7 +74,7 @@ class _LoginPageBodyState extends State<LoginPageBody> {
                   children: [
                     GestureDetector(
                       onTap: (){},
-                      child: const Text("Forget Password ?",style: const TextStyle(color:  Color(0xFFFD6B22)),),
+                      child: const Text("Forget Password ?",style: TextStyle(color:  Color(0xFFFD6B22)),),
                     ),
                     const Spacer(),
                     const RememberMeCheckbox(),

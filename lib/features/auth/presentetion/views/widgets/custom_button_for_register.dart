@@ -12,7 +12,7 @@ class CustomButtonForRegister extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(txt) ,
-        TextButton(onPressed: onPressed, child: Text(txtButton , style: const TextStyle(color: const Color(0xFFFD6B22)),))
+        TextButton(onPressed: onPressed, child: Text(txtButton , style: const TextStyle(color: Color(0xFFFD6B22)),))
       ],
     );
   }

@@ -12,7 +12,7 @@ class ChatBotScreen extends StatefulWidget {
 }
 
 class _BotPageState extends State<ChatBotScreen> {
-  TextEditingController _userMessage = TextEditingController();
+  final TextEditingController _userMessage = TextEditingController();
   static const apiKey = "AIzaSyAVqLxFqbHllwPelNxWGQeqPW_UR97yzOk";
   final model = GenerativeModel(
     model: 'gemini-1.5-flash-latest',
@@ -100,8 +100,8 @@ class _BotPageState extends State<ChatBotScreen> {
                   onPressed: sendMessage,
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(Colors.deepPurple),
-                    shape: MaterialStateProperty.all(const CircleBorder()),
+                        WidgetStateProperty.all(Colors.deepPurple),
+                    shape: WidgetStateProperty.all(const CircleBorder()),
                   ),
                 ),
               ],

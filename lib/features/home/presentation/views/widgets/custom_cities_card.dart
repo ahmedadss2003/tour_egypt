@@ -117,7 +117,7 @@ return BlocBuilder<PlacesCubit, PlacesState>(
               ),
               Center(
                 child: Text(
-                  "${place.typeOfTourism}",
+                  place.typeOfTourism,
                   style: AppStyles.textStyle18.copyWith(fontFamily: "ZillaSlab", color: Colors.black),
                 ),
               ),

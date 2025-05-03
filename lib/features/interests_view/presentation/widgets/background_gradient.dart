@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BackgroundGradient extends StatelessWidget {
-  const BackgroundGradient({Key? key}) : super(key: key);
+  const BackgroundGradient({super.key});
 
   @override
   Widget build(BuildContext context) {

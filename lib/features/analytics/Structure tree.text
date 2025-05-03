@@ -1,0 +1,12 @@
+analytics/
+├── data/
+│   └── mock_analytics_data.dart       # or connect to real API later
+├── domain/
+│   └── models/
+│       └── analytics_model.dart
+├── presentation/
+│   ├── cubit/
+│   │   ├── analytics_cubit.dart
+│   │   └── analytics_state.dart
+│   └── views/
+│       └── analytics_screen.dart

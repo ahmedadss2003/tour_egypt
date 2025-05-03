@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RememberMeCheckbox extends StatefulWidget {
-  const RememberMeCheckbox({Key? key}) : super(key: key);
+  const RememberMeCheckbox({super.key});
 
   @override
   State<RememberMeCheckbox> createState() => _RememberMeCheckboxState();
